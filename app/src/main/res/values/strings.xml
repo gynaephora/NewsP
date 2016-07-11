@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Все новости</string>
+    <string name="about_program">О программе</string>
+    <string name="refresh">Обновить</string>
+    <string name="drawer_open">open</string>
+    <string name="drawer_close">close</string>
+    <string name="ok">OK</string>
+    <string name="about_program_text">Author: Volodymyr Korzhovskyy
+    </string>
+    <!--news category url-->
+
+    <string-array name="news_url">
+    <item>http://podrobnosti.ua/rss/feed/?category=all-news</item>
+    <item>http://podrobnosti.ua/rss/feed/?category=vlast</item>
+    <item>http://podrobnosti.ua/rss/feed/?category=obschestvo</item>
+    <item>http://podrobnosti.ua/rss/feed/?category=dengi</item>
+    <item>http://podrobnosti.ua/rss/feed/?category=proisshestvija</item>
+    <item>http://podrobnosti.ua/rss/feed/?category=kriminal</item>
+    <item>http://podrobnosti.ua/rss/feed/?category=tehno</item>
+    <item>http://podrobnosti.ua/rss/feed/?category=stil-zhizni</item>
+    <item>http://podrobnosti.ua/rss/feed/?category=podrobnenko</item>
+    <item>http://podrobnosti.ua/rss/feed/?category=analitika</item>
+    </string-array>
+
+
+
+    <!--news category items list -->
+
+    <string-array name="news_theme">
+        <item>Все новости</item>
+        <item>Власть</item>
+        <item>Общество</item>
+        <item>Деньги</item>
+        <item>Происшествия</item>
+        <item>Криминал</item>
+        <item>Техно</item>
+        <item>Стиль жизни</item>
+        <item>Подробненько</item>
+        <item>Аналитика</item>
+    </string-array>
+</resources>
