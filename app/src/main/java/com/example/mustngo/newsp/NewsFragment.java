@@ -11,6 +11,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -91,17 +92,22 @@ public  class NewsFragment extends Fragment{
         }
         return super.onOptionsItemSelected(item);
     }*/
+
+
+
    public boolean onOptionsItemSelected(MenuItem item){
        switch(item.getItemId()) {
            case android.R.id.home:
                //   case R.id.action_back:
+               getActivity().finish();
+               /*
                if (NavUtils.getParentActivityName(getActivity()) != null) {
                    NavUtils.navigateUpFromSameTask(getActivity());
-               }
+               }*/
                return true;
            case R.id.action_settings:
                AboutProgramDialogFragment aboutProgramDialogFragment = new AboutProgramDialogFragment();
-               aboutProgramDialogFragment.show(getFragmentManager(), "dlg1");
+               aboutProgramDialogFragment.show(getFragmentManager(), "about_program");
                return true;
        }
        return super.onOptionsItemSelected(item);
