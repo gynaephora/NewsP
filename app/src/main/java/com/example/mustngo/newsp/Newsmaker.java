@@ -40,6 +40,21 @@ public class Newsmaker implements jsoupParse {
                 Log.i("News_page_out", "null");
 
             }}
-        return mNewsmaker;
+        if(mNewsmaker.equals("Интерфакс-Украина")|
+                mNewsmaker.equals("Українскі новини")|
+                mNewsmaker.equals("Українські новини")|
+                mNewsmaker.equals("Интерфакс")|
+                mNewsmaker.equals("УНІАН")|
+                mNewsmaker.equals("Украинская Фото Группа")|
+                mNewsmaker.equals("Reuters")|
+                mNewsmaker.equals("Украинские новости")|
+                mNewsmaker.equals("Інтерфакс")|
+                mNewsmaker.equals("Інтерфакс-Україна")|
+                mNewsmaker.equals("УНИАН")|
+                mNewsmaker.equals("Українська Фото Група")) {
+
+            mNewsmaker="null";
+        }
+                return mNewsmaker;
     }
 }

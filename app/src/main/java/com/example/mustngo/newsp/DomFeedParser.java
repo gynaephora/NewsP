@@ -17,12 +17,9 @@ import javax.xml.parsers.DocumentBuilderFactory;
  */
 public class DomFeedParser extends BaseFeedParser {
 
-
     protected DomFeedParser(String feedUrl) {
         super(feedUrl);
     }
-
-
 
     public ArrayList<News> parse() {
        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -65,6 +62,7 @@ public class DomFeedParser extends BaseFeedParser {
 
                         nm = newsmakerParse.parse(link);
                         message.setNewsmaker(nm);
+                        Log.i("NM", nm);
 
 
 
@@ -93,8 +91,11 @@ public class DomFeedParser extends BaseFeedParser {
                     }*/
                 }
                    if(pd!="null" && nm!="null") {
-                        messages.add(message);
-
+                       messages.add(message);
+                    //   if(nm!="Reuters" & nm!="Украинская Фото Группа" & nm!="УНІАН" & nm!="Українські новини" & nm!="Интерфакс-Украина" & nm!="Интерфакс") {
+                     /*  if(nm!="Интерфакс-Украина") {
+                           messages.add(message);
+                       }*/
                     /*   NewsBox.get(getContext()).saveNews();
                         NewsBox.get(getActivity()).addNews(message);
                     */}
