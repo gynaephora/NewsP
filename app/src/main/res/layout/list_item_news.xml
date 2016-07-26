@@ -9,14 +9,21 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="5dp"
         android:id="@+id/textView1"
+        android:textSize="20sp"
         style="@style/Base.TextAppearance.AppCompat.Body1"
         android:textColor="#234567"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:textSize="15sp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
         android:id="@+id/textView2"
         android:textColor="#151854"/>
 </LinearLayout>

@@ -33,5 +33,7 @@
         android:divider="@android:color/holo_blue_light"
         android:dividerHeight="0dp"
         android:background="#026bf2"
-        style="@style/Base.TextAppearance.AppCompat" />
+        android:textSize="20sp"
+        style="@style/Base.TextAppearance.AppCompat"
+        android:fastScrollEnabled="true" />
 </android.support.v4.widget.DrawerLayout>
