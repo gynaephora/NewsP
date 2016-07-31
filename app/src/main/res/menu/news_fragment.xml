@@ -5,8 +5,5 @@
     tools:context="com.example.mustngo.newsp.NewsPagerActivity">
         <!-- "Mark Favorite", should appear as action button if possible -->
 
-        <item android:id="@+id/action_settings"
-            android:title="@string/about_program"
-            android:icon="@drawable/ic_menu"
-            app:showAsAction="never"/>
+
 </menu>

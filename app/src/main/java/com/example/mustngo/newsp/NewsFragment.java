@@ -105,10 +105,10 @@ public  class NewsFragment extends Fragment{
                    NavUtils.navigateUpFromSameTask(getActivity());
                }*/
                return true;
-           case R.id.action_settings:
+          /* case R.id.action_settings:
                AboutProgramDialogFragment aboutProgramDialogFragment = new AboutProgramDialogFragment();
                aboutProgramDialogFragment.show(getFragmentManager(), "about_program");
-               return true;
+               return true;*/
        }
        return super.onOptionsItemSelected(item);
    }
@@ -118,8 +118,8 @@ public  class NewsFragment extends Fragment{
          menu.clear();
          inflater.inflate(R.menu.news_fragment,menu);
 
-         MenuItem menuItem=menu.findItem(R.id.action_settings);
-         menuItem.setTitle(R.string.about_program);
+        // MenuItem menuItem=menu.findItem(R.id.action_settings);
+        // menuItem.setTitle(R.string.about_program);
     }
 
     @TargetApi(11)
@@ -155,12 +155,12 @@ public  class NewsFragment extends Fragment{
         mPubDate=(TextView) vv.findViewById(R.id.pub_date);
         mPubDate.setText(mNews.getPubDate());
 
-
-        mAuthor=(TextView) vv.findViewById(R.id.author);
-        mAuthor.setText(mNews.getAuthor());
-
+        if(mNews.getAuthor()!="null") {
+            mAuthor = (TextView) vv.findViewById(R.id.author);
+            mAuthor.setText("Автор: " + mNews.getAuthor());
+        }
         mNewsmaker=(TextView) vv.findViewById(R.id.newsmaker);
-        mNewsmaker.setText(mNews.getNewsmaker());
+        mNewsmaker.setText("По материалам: "+mNews.getNewsmaker());
 
         mTitle=(TextView) vv.findViewById(R.id.news_title);
         mTitle.setText(mNews.getTitle());
