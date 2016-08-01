@@ -82,7 +82,11 @@
         android:paddingRight="10dp"
         android:paddingBottom="5dp"
         android:textColor="#234567"
-        android:id="@+id/news_link" />
+        android:id="@+id/news_link"
+        android:linksClickable="true"
+        android:textColorLink="#1767b7"
+        android:autoLink="web"
+        />
 
 </LinearLayout>
 </ScrollView>
