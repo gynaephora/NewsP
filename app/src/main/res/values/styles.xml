@@ -12,4 +12,9 @@
     <style name="myToolbarStyle" parent="@style/Widget.AppCompat.Toolbar">
         <item name="android:paddingRight">10dp</item>
     </style>
+
+    <style name="myStyleDrawer">
+        <item name="android:textSize">10sp</item> <!-- menu item text size-->
+
+    </style>
 </resources>

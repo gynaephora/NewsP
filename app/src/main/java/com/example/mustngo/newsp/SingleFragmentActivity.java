@@ -47,7 +47,7 @@ public abstract class SingleFragmentActivity extends AppCompatActivity{
 
         // Set the adapter for the list view
         mDrawerList.setAdapter(new ArrayAdapter<String>(this,
-                android.R.layout.simple_expandable_list_item_1, mNewsTheme));
+               R.layout.drawer_list_item, mNewsTheme));
         // Set the list's click listener
         //  mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
 
