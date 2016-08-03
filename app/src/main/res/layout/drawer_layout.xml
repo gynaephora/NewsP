@@ -37,6 +37,4 @@
         android:fillViewport="true"
         android:fastScrollEnabled="true"  />
 
-
-
 </android.support.v4.widget.DrawerLayout>

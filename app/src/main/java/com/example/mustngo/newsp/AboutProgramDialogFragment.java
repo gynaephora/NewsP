@@ -25,6 +25,8 @@ public class AboutProgramDialogFragment  extends DialogFragment {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
                         // sign in the user ...
+
+                        dialog.cancel();
                     }
                 })
                 /*.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
@@ -32,6 +34,7 @@ public class AboutProgramDialogFragment  extends DialogFragment {
                         LoginDialogFragment.this.getDialog().cancel();
                     }
                 })*/;
+
         return builder.create();
     }
     }

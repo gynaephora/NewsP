@@ -125,12 +125,19 @@ public abstract class SingleFragmentActivity extends AppCompatActivity{
            fragment = createFragment();
            args.putInt(NewsListFragment.ARG_NEWS_NUMBER,position);
            fragment.setArguments(args);
-           fm.beginTransaction().replace(R.id.fragmentContainer, fragment).commit();
-        }
+           if(position!=10){fm.beginTransaction().replace(R.id.fragmentContainer, fragment).commit();
+               setTitle(mNewsTheme[position]);}
+           else {
+              // FragmentManager fm=getSupportFragmentManager();
+               AboutProgramDialogFragment aboutProgramDialogFragment=new AboutProgramDialogFragment();
+               aboutProgramDialogFragment.show(getSupportFragmentManager(), "dialog");
+
+           }
+       }
         // Highlight the selected item, update the title, and close the drawer
         mDrawerList.setItemChecked(position, true);
-        setTitle(mNewsTheme[position]);
         mDrawerLayout.closeDrawer(mDrawerList);
+
     }
 
     @Override
