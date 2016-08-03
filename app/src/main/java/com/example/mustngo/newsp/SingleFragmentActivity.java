@@ -125,9 +125,9 @@ public abstract class SingleFragmentActivity extends AppCompatActivity{
            fragment = createFragment();
            args.putInt(NewsListFragment.ARG_NEWS_NUMBER,position);
            fragment.setArguments(args);
-           if(position!=10){fm.beginTransaction().replace(R.id.fragmentContainer, fragment).commit();
+           if(position!=10 && position!=11){fm.beginTransaction().replace(R.id.fragmentContainer, fragment).commit();
                setTitle(mNewsTheme[position]);}
-           else {
+           else if(position==11){
               // FragmentManager fm=getSupportFragmentManager();
                AboutProgramDialogFragment aboutProgramDialogFragment=new AboutProgramDialogFragment();
                aboutProgramDialogFragment.show(getSupportFragmentManager(), "dialog");
