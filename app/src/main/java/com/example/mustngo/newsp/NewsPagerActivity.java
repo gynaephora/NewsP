@@ -12,6 +12,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.UUID;
@@ -22,8 +23,8 @@ import java.util.UUID;
  */
 public class NewsPagerActivity extends AppCompatActivity {
     private ViewPager mViewPager;
-    //private ArrayList<News> mNews;
 
+    String mTitle;
     @Override
     public  void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -34,8 +35,16 @@ public class NewsPagerActivity extends AppCompatActivity {
         android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         // Get a support ActionBar corresponding to this toolbar
+
+    //    mTitle=getIntent().getExtras().getString("title");
+
+
+      //  Log.i("intent_get", newString);
+
+
+
         ActionBar ab = getSupportActionBar();
-        ab.setTitle("good");
+      //  ab.setTitle(newString);
         // Enable the Up button
         ab.setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationIcon(R.drawable.ic_action_back);
@@ -85,7 +94,5 @@ public class NewsPagerActivity extends AppCompatActivity {
                 }*/
             }
         });
-
-
     }
 }

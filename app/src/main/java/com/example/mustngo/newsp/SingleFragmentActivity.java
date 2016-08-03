@@ -1,6 +1,7 @@
 package com.example.mustngo.newsp;
 
 import android.app.ActionBar;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,6 +12,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -34,6 +36,7 @@ public abstract class SingleFragmentActivity extends AppCompatActivity{
     private ActionBarDrawerToggle mDrawerToggle;
 
 
+
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -41,7 +44,11 @@ public abstract class SingleFragmentActivity extends AppCompatActivity{
 
         mTitle = mDrawerTitle = getTitle();
 
+
         mNewsTheme = getResources().getStringArray(R.array.news_theme);
+
+
+
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
 
@@ -125,8 +132,11 @@ public abstract class SingleFragmentActivity extends AppCompatActivity{
            fragment = createFragment();
            args.putInt(NewsListFragment.ARG_NEWS_NUMBER,position);
            fragment.setArguments(args);
+
            if(position!=10 && position!=11){fm.beginTransaction().replace(R.id.fragmentContainer, fragment).commit();
-               setTitle(mNewsTheme[position]);}
+               setTitle(mNewsTheme[position]);
+
+          }
            else if(position==11){
               // FragmentManager fm=getSupportFragmentManager();
                AboutProgramDialogFragment aboutProgramDialogFragment=new AboutProgramDialogFragment();
@@ -146,6 +156,7 @@ public abstract class SingleFragmentActivity extends AppCompatActivity{
         //getActionBar().setTitle(mTitle);
     android.support.v7.app.ActionBar ab = getSupportActionBar();
         ab.setTitle(mTitle);
+
     }
 /*
     public boolean onCreateOptionsMenu(Menu menu) {

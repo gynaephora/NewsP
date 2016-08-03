@@ -115,9 +115,9 @@ public  class NewsFragment extends Fragment{
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater){
          super.onCreateOptionsMenu(menu,inflater);
-         menu.clear();
          inflater.inflate(R.menu.news_fragment,menu);
 
+        // menuItem.setTitle(R.string.about_program);
         // MenuItem menuItem=menu.findItem(R.id.action_settings);
         // menuItem.setTitle(R.string.about_program);
     }
@@ -130,7 +130,7 @@ public  class NewsFragment extends Fragment{
        if(mNews.getTitle()!=null){
            ((AppCompatActivity)getActivity()).setTitle(mNews.getTitle());
         }
-*/
+
 /*
         if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.HONEYCOMB){
            if(NavUtils.getParentActivityName(getActivity())!=null) {
