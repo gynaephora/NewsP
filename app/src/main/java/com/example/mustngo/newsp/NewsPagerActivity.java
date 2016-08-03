@@ -33,9 +33,9 @@ public class NewsPagerActivity extends AppCompatActivity {
         //toolbar
         android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-// Get a support ActionBar corresponding to this toolbar
+        // Get a support ActionBar corresponding to this toolbar
         ActionBar ab = getSupportActionBar();
-
+        ab.setTitle("good");
         // Enable the Up button
         ab.setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationIcon(R.drawable.ic_action_back);
