@@ -14,6 +14,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -24,6 +28,9 @@ import java.util.UUID;
 public class NewsPagerActivity extends AppCompatActivity {
     private ViewPager mViewPager;
 
+    final String LOG_TAG = "myLogs";
+    final String FILENAME = "file";
+    String str = "";
     String mTitle;
     @Override
     public  void onCreate(Bundle savedInstanceState){
@@ -41,10 +48,25 @@ public class NewsPagerActivity extends AppCompatActivity {
 
       //  Log.i("intent_get", newString);
 
+        try {
+            // открываем поток для чтения
+            BufferedReader br = new BufferedReader(new InputStreamReader(
+                    openFileInput(FILENAME)));
 
+            // читаем содержимое
+            while ((str = br.readLine()) != null) {
+                Log.d(LOG_TAG, "File read");
+                mTitle=str;
 
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Log.d(LOG_TAG, "Title:"+mTitle);
         ActionBar ab = getSupportActionBar();
-      //  ab.setTitle(newString);
+        ab.setTitle(mTitle);
         // Enable the Up button
         ab.setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationIcon(R.drawable.ic_action_back);
@@ -66,11 +88,8 @@ public class NewsPagerActivity extends AppCompatActivity {
 
             @Override
             public Fragment getItem(int pos) {
-            /*News news=mNews.get(pos);
-            return NewsFragment.newInstance(news.getId());*/
-                UUID crimeId =  mNews.get(pos).getId();
-                return NewsFragment.newInstance(crimeId);
-
+                UUID newsId =  mNews.get(pos).getId();
+                return NewsFragment.newInstance(newsId);
             }
     });
         UUID newsId=(UUID)getIntent().getSerializableExtra(NewsFragment.EXTRA_NEWS_ID);

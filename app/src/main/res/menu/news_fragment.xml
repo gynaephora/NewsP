@@ -5,5 +5,4 @@
     tools:context="com.example.mustngo.newsp.NewsPagerActivity">
         <!-- "Mark Favorite", should appear as action button if possible -->
 
-
 </menu>

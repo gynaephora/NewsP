@@ -117,6 +117,7 @@ public  class NewsFragment extends Fragment{
          super.onCreateOptionsMenu(menu,inflater);
          inflater.inflate(R.menu.news_fragment,menu);
 
+
         // menuItem.setTitle(R.string.about_program);
         // MenuItem menuItem=menu.findItem(R.id.action_settings);
         // menuItem.setTitle(R.string.about_program);
@@ -138,7 +139,7 @@ public  class NewsFragment extends Fragment{
             //   ((AppCompatActivity)getActivity()).getActionBar().setDisplayHomeAsUpEnabled(true);
            }
         }*/
-
+     //   ((AppCompatActivity)getActivity()).setTitle("Бульдожка");
 
         ImageView imageView1=(ImageView)vv.findViewById(R.id.news_pick);
         String newsPickUrl=mNews.getUrlPick();

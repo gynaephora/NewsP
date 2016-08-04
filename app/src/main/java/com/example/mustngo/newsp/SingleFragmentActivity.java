@@ -21,6 +21,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import java.io.IOException;
+
 /**
  * Created by mustango on 20.01.16.
  */
@@ -156,6 +158,7 @@ public abstract class SingleFragmentActivity extends AppCompatActivity{
         //getActionBar().setTitle(mTitle);
     android.support.v7.app.ActionBar ab = getSupportActionBar();
         ab.setTitle(mTitle);
+
 
     }
 /*
