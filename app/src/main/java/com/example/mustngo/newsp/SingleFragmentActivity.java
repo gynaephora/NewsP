@@ -147,9 +147,10 @@ public abstract class SingleFragmentActivity extends AppCompatActivity{
            }
        }
         // Highlight the selected item, update the title, and close the drawer
-        mDrawerList.setItemChecked(position, true);
-        mDrawerLayout.closeDrawer(mDrawerList);
-
+        if (position!=10) {
+            mDrawerList.setItemChecked(position, true);
+            mDrawerLayout.closeDrawer(mDrawerList);
+        }
     }
 
     @Override
