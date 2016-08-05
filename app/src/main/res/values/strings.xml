@@ -5,8 +5,10 @@
     <string name="drawer_open">open</string>
     <string name="drawer_close">close</string>
     <string name="ok">OK</string>
-    <string name="about_program_text">Author: Volodymyr Korzhovskyy
-    </string>
+    <string name="about_program_text">Author: Volodymyr Korzhovskyy</string>
+    <string name="empty">Нет интернет соединения</string>
+    <string name="downloading">Идет загрузка новостей</string>
+
     <!--news category url-->
 
     <string-array name="news_url">
