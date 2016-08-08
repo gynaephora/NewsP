@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Все новости</string>
+    <string name="app_name">NewsP</string>
     <string name="about_program">О программе</string>
     <string name="refresh">Обновить</string>
     <string name="drawer_open">open</string>
