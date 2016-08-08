@@ -149,9 +149,9 @@ public  class NewsFragment extends Fragment{
             Picasso.with(getContext()) //передаем контекст приложения
                     .load(newsPickUrl) //адрес изображения
                     .into(imageView1); //ссылка на ImageView
-        }catch(Exception e){ Picasso.with(getContext()) //передаем контекст приложения
-                .load("http://podrobnosti.ua/media/pictures/2016/6/10/thumbs/472x246/chto-nelzja-delat-zhenschinam-vo-vremja-prosmotra-futbolnogo-matcha_rect_7e155568a54a71a8547feca3641e0192.jpg") //адрес изображения
-                .into(imageView1);}
+        }catch(Exception e){
+           imageView1.setImageResource(R.drawable.news_background);
+       }
 
         mPubDate=(TextView) vv.findViewById(R.id.pub_date);
         mPubDate.setText(mNews.getPubDate());
