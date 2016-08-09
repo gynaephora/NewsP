@@ -141,8 +141,10 @@ public abstract class SingleFragmentActivity extends AppCompatActivity{
           }
            else if(position==11){
               // FragmentManager fm=getSupportFragmentManager();
-               AboutProgramDialogFragment aboutProgramDialogFragment=new AboutProgramDialogFragment();
-               aboutProgramDialogFragment.show(getSupportFragmentManager(), "dialog");
+             /*  AboutProgramDialogFragment aboutProgramDialogFragment=new AboutProgramDialogFragment();
+               aboutProgramDialogFragment.show(getSupportFragmentManager(), "dialog");*/
+               Intent intent = new Intent(this, AboutProgramActivity.class);
+               startActivity(intent);
 
            }
        }

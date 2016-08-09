@@ -5,9 +5,13 @@
     <string name="drawer_open">open</string>
     <string name="drawer_close">close</string>
     <string name="ok">OK</string>
-    <string name="about_program_text">Author: Volodymyr Korzhovskyy</string>
     <string name="empty">Нет интернет соединения</string>
     <string name="downloading">Идет загрузка новостей</string>
+
+    <string name="app_bage"><b>NewsP:</b> ридер новостной RSS рассылки</string>
+    <string name="app_source"><b>Источник:</b> сайт <b>www.podrobnosti.ua</b></string>
+    <string name="app_version"><b>Версия:</b> 1.0</string>
+    <string name="app_author"><b>Автор:</b> it.mustango@gmail.com</string>
 
     <!--news category url-->
 

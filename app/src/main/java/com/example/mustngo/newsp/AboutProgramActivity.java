@@ -1,5 +1,6 @@
 package com.example.mustngo.newsp;
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -9,6 +10,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 
 import java.util.ArrayList;
 import java.util.UUID;
@@ -18,12 +20,15 @@ import java.util.UUID;
  */
 public class AboutProgramActivity extends AppCompatActivity {
 
-
     @Override
     public  void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_program);
 
+
+        setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+       /* setMenuVisibility(true);
+        setHasOptionsMenu(true);*/
         //toolbar
         android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -31,14 +36,27 @@ public class AboutProgramActivity extends AppCompatActivity {
         ActionBar ab = getSupportActionBar();
 
         // Enable the Up button
-       ab.setDisplayHomeAsUpEnabled(true);
+        ab.setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationIcon(R.drawable.ic_action_back);
 
-       /*
-        FragmentManager fm = getSupportFragmentManager();
-        Fragment fragment = fm.findFragmentById(R.id.fragmentContainer);
-        fm.beginTransaction().replace(R.id.fragmentContainer, fragment).commit();
-*/
+       }
+
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch(item.getItemId()) {
+            case android.R.id.home:
+                //   case R.id.action_back:
+               finish();
+               /*
+               if (NavUtils.getParentActivityName(getActivity()) != null) {
+                   NavUtils.navigateUpFromSameTask(getActivity());
+               }*/
+                return true;
+          /* case R.id.action_settings:
+               AboutProgramDialogFragment aboutProgramDialogFragment = new AboutProgramDialogFragment();
+               aboutProgramDialogFragment.show(getFragmentManager(), "about_program");
+               return true;*/
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 }

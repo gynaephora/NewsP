@@ -1,9 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
     <include layout="@layout/toolbar"/>
-    <!-- activity_screen_slide.xml -->
-<include layout="@layout/fragment_about_program"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="5dp"
+        android:paddingTop="10dp"
+        android:textSize="10sp"
+        android:textColor="#151854"
+        android:text="@string/app_bage"
+        android:id="@+id/textView4"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:textSize="10sp"
+        android:textColor="#151854"
+        android:text="@string/app_source"
+        android:id="@+id/textView3"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:textSize="10sp"
+        android:textColor="#151854"
+        android:text="@string/app_version"
+        android:id="@+id/textView2"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:textSize="10sp"
+        android:textColor="#151854"
+        android:text="@string/app_author"
+        android:id="@+id/textView1"
+        />
+
+
+
 </LinearLayout>
