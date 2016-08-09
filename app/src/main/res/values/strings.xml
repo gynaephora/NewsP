@@ -12,7 +12,7 @@
     <string name="app_source"><b>Источник:</b> сайт <b>www.podrobnosti.ua</b></string>
     <string name="app_version"><b>Версия:</b> 1.0</string>
     <string name="app_author"><b>Автор:</b> it.mustango@gmail.com</string>
-
+    <string name="icon_author"><b>Дизайн иконок:</b> Eray Zesen</string>
     <!--news category url-->
 
     <string-array name="news_url">

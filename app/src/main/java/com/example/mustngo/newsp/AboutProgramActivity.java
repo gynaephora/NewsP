@@ -36,6 +36,7 @@ public class AboutProgramActivity extends AppCompatActivity {
         ActionBar ab = getSupportActionBar();
 
         // Enable the Up button
+        ab.setTitle("О программе");
         ab.setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationIcon(R.drawable.ic_action_back);
 
