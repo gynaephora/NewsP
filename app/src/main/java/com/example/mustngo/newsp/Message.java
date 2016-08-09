@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.Objects;
 
 /**
- * Created by yu-sat on 28.01.2016.
+ * Created by Volodymyr Korzhovsky on 28.01.2016.
  */
 public class Message implements Comparable<Message> {
     static SimpleDateFormat FORMATTER = new SimpleDateFormat("EEE,dd yyyy HH:mm:ss z");
@@ -52,7 +52,7 @@ public class Message implements Comparable<Message> {
     }
 
     public void setDate(String date) {
-        //при необходимости полный формат даты
+        //if necessary, the full date format
         while (!date.endsWith("00")){
             date+="0";
         }
@@ -63,17 +63,10 @@ public class Message implements Comparable<Message> {
         }
 
     }
-/*
-    @Override
-    public String toString(){}
-    @Override
-    public int hashCode(){}
-    @Override
-    public boolean equals(Objects obj){
-        }*/
+
     public int compareTo(Message another){
         if(another == null) return 1;
-        //сортировка по убіванию, наиболее свежие записи выводятся сверху
+        //sorted in descending order, the most recent entries are displayed on top
         return another.date.compareTo(date);
     }
 

@@ -11,7 +11,4 @@
             android:title="@string/refresh"
          />
 
-
-        <!-- Settings, should always be in the overflow -->
-
 </menu>

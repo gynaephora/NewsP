@@ -1,6 +1,5 @@
 package com.example.mustngo.newsp;
 
-//import android.app.FragmentManager;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -23,7 +22,7 @@ import java.util.UUID;
 
 
 /**
- * Created by mustango on 20.01.16.
+ * Created by Volodymyr Korzhovsky on 20.01.16.
  */
 public class NewsPagerActivity extends AppCompatActivity {
     private ViewPager mViewPager;
@@ -37,23 +36,17 @@ public class NewsPagerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.news_pager_layout);
 
-
         //toolbar
         android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         // Get a support ActionBar corresponding to this toolbar
 
-    //    mTitle=getIntent().getExtras().getString("title");
-
-
-      //  Log.i("intent_get", newString);
-
         try {
-            // открываем поток для чтения
+            // oopen stream for read
             BufferedReader br = new BufferedReader(new InputStreamReader(
                     openFileInput(FILENAME)));
 
-            // читаем содержимое
+            // reading content
             while ((str = br.readLine()) != null) {
                 Log.d(LOG_TAG, "File read");
                 mTitle=str;
@@ -70,13 +63,8 @@ public class NewsPagerActivity extends AppCompatActivity {
         // Enable the Up button
         ab.setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationIcon(R.drawable.ic_action_back);
-       // mViewPager=new ViewPager(this);
+
         mViewPager=(ViewPager) findViewById(R.id.pager);
-
-
-
-     //   mViewPager.setId(R.id.viewPager);
-       // setContentView(mViewPager);
 
         final ArrayList<News> mNews=NewsBox.get(this).getNews();
         FragmentManager fm=getSupportFragmentManager();
@@ -108,10 +96,7 @@ public class NewsPagerActivity extends AppCompatActivity {
 
             public void onPageSelected(int pos) {
                 News news=mNews.get(pos);
-            /*    if (news.getTitle()!=null){
-                    setTitle(news.getTitle());
-                }*/
-            }
+                }
         });
     }
 }

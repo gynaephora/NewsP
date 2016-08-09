@@ -8,7 +8,7 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 
 /**
- * Created by kalmaro on 08.06.2016.
+ * Created by Volodymyr Korzhovsky on 08.06.2016.
  */
 public class UrlNewsPick implements jsoupParse {
     private String mUrlNewsPick="null";
@@ -22,8 +22,6 @@ public class UrlNewsPick implements jsoupParse {
         }
         if (doc != null) {
             try {
-
-
                 //get news pick url
                 try {
                     Elements newsPickUrlBox = doc.select("meta[itemprop=image");
@@ -36,9 +34,7 @@ public class UrlNewsPick implements jsoupParse {
                 }
 
             } catch (Exception e) {
-                //newsPickUrl="null";
-
-                Log.i("News_page_out", mUrlNewsPick);
+                    Log.i("News_page_out", mUrlNewsPick);
             }}
 
         return mUrlNewsPick;

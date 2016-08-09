@@ -5,7 +5,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
 /**
- * Created by mustango on 03.08.2016.
+ * Created by Volodymyr Korzhovsky on 03.08.2016.
  */
 public class NetworkManager {
     public  static boolean isNetworkAvailable(Context context) {
@@ -17,5 +17,4 @@ public class NetworkManager {
             return false;
         }
     }
-
 }

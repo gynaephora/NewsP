@@ -9,7 +9,7 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 
 /**
- * Created by kalmaro on 08.06.2016.
+ * Created by Volodymyr Korzhovsky on 08.06.2016.
  */
 public class FullText implements jsoupParse {
     private String mUrlNews;

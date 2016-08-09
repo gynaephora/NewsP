@@ -6,12 +6,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
- * Created by yu-sat on 28.01.2016.
+ * Created by Volodymyr Korzhovsky on 28.01.2016.
  */
 public abstract class BaseFeedParser implements FeedParser{
 
-    //Имена тегов
-  //  static final String PUB_DATE="pubDate";
     static final String DESCRIPTION="description";
     static final String LINK="link";
     static final String TITLE="title";

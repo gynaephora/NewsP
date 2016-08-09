@@ -24,7 +24,7 @@ import android.widget.ListView;
 import java.io.IOException;
 
 /**
- * Created by mustango on 20.01.16.
+ * Created by Volodymyr Korzhovsky on 20.01.16.
  */
 public abstract class SingleFragmentActivity extends AppCompatActivity{
     protected abstract Fragment createFragment();
@@ -58,8 +58,6 @@ public abstract class SingleFragmentActivity extends AppCompatActivity{
         mDrawerList.setAdapter(new ArrayAdapter<String>(this,
                R.layout.drawer_list_item, mNewsTheme));
         // Set the list's click listener
-        //  mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
-
         // enabling action bar app icon and behaving it as toggle button
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -72,7 +70,6 @@ public abstract class SingleFragmentActivity extends AppCompatActivity{
             /** Called when a drawer has settled in a completely closed state.*/
             public void onDrawerClosed(View view) {
                 super.onDrawerClosed(view);
-              //  getActionBar().setTitle(mTitle);
                 invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
             }
 
@@ -81,7 +78,6 @@ public abstract class SingleFragmentActivity extends AppCompatActivity{
                 super.onDrawerOpened(drawerView);
                // Set the list's click listener
                 mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
-              //  getActionBar().setTitle(mDrawerTitle);
                 invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
             }
         };
@@ -104,13 +100,6 @@ public abstract class SingleFragmentActivity extends AppCompatActivity{
             fm.beginTransaction().replace(R.id.fragmentContainer, fragment).commit();
         }
 ////////////////////////
-/*
-        FragmentManager fm = getSupportFragmentManager();
-        Fragment fragment = fm.findFragmentById(R.id.fragmentContainer);
-        if (fragment == null){
-            fragment = createFragment();
-            fm.beginTransaction().add(R.id.fragmentContainer, fragment).commit();
-        }*/
     }
 
     private class DrawerItemClickListener implements ListView.OnItemClickListener {
@@ -140,9 +129,7 @@ public abstract class SingleFragmentActivity extends AppCompatActivity{
 
           }
            else if(position==11){
-              // FragmentManager fm=getSupportFragmentManager();
-             /*  AboutProgramDialogFragment aboutProgramDialogFragment=new AboutProgramDialogFragment();
-               aboutProgramDialogFragment.show(getSupportFragmentManager(), "dialog");*/
+
                Intent intent = new Intent(this, AboutProgramActivity.class);
                startActivity(intent);
 
@@ -158,35 +145,9 @@ public abstract class SingleFragmentActivity extends AppCompatActivity{
     @Override
     public void setTitle(CharSequence title) {
         mTitle = title;
-        //getActionBar().setTitle(mTitle);
-    android.support.v7.app.ActionBar ab = getSupportActionBar();
+        android.support.v7.app.ActionBar ab = getSupportActionBar();
         ab.setTitle(mTitle);
 
 
     }
-/*
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.news_fragment_list, menu);
-        return true;
-    }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_settings:
-                // User chose the "Settings" item, show the app settings UI...
-                return true;
-
-            case R.id.action_favorite:
-                // User chose the "Favorite" action, mark the current item
-                // as a favorite...
-                return true;
-
-            default:
-                // If we got here, the user's action was not recognized.
-                // Invoke the superclass to handle it.
-                return super.onOptionsItemSelected(item);
-        }
-    }*/
-
 }

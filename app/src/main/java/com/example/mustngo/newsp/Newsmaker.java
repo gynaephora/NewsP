@@ -9,10 +9,10 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 
 /**
- * Created by mustango on 08.06.2016.
+ * Created by Volodymyr Korzhovsky on 08.06.2016.
  */
 public class Newsmaker implements jsoupParse {
-   // private String mUrlNews;
+
     private String mNewsmaker;
     @Override
     public String parse(String mUrlNews) {

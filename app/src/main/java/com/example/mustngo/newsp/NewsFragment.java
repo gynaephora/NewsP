@@ -30,7 +30,7 @@ import org.w3c.dom.Text;
 import java.util.UUID;
 
 /**
- * Created by mustango on 20.01.16.
+ * Created by Volodymyr Korzhovsky on 20.01.16.
  */
 public  class NewsFragment extends Fragment{
     News mNews;
@@ -60,95 +60,38 @@ public  class NewsFragment extends Fragment{
 
         getActivity().setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-
-
-//        toolbar.setLogo(R.drawable.ic_action_back);
-       // toolbar.inflateMenu(R.menu.news_fragment);
-/*
-        // setDisplayHomeAsUpEnable(true);
-        android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
-        toolbar.setNavigationIcon(R.drawable.ic_action_back);
-        // Get a support ActionBar corresponding to this toolbar
-        android.support.v7.app.ActionBar ab = getSupportActionBar();
-                // Enable the Up button
-        ab.setDisplayHomeAsUpEnabled(true);*/
-
         UUID newsId = (UUID)getArguments().getSerializable(EXTRA_NEWS_ID);
         mNews=NewsBox.get(getActivity()).getNewsm(newsId);
         Log.d(TAG, mNews.toString());
     }
-/*
-    public void onPrepareOptionsMenu(Menu menu)
-    {
-        MenuItem register = menu.findItem(R.id.action_back);
-        register.setVisible(true);
-        // return true;
-    }*/
-
-   /* public boolean onOptionsItemSelected(MenuItem item){
-        int id=item.getItemId();
-        if (id==R.id.action_settings){
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }*/
-
-
 
    public boolean onOptionsItemSelected(MenuItem item){
        switch(item.getItemId()) {
            case android.R.id.home:
-               //   case R.id.action_back:
                getActivity().finish();
-               /*
-               if (NavUtils.getParentActivityName(getActivity()) != null) {
-                   NavUtils.navigateUpFromSameTask(getActivity());
-               }*/
                return true;
-          /* case R.id.action_settings:
-               AboutProgramDialogFragment aboutProgramDialogFragment = new AboutProgramDialogFragment();
-               aboutProgramDialogFragment.show(getFragmentManager(), "about_program");
-               return true;*/
-       }
+           }
        return super.onOptionsItemSelected(item);
    }
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater){
          super.onCreateOptionsMenu(menu,inflater);
          inflater.inflate(R.menu.news_fragment,menu);
-
-
-        // menuItem.setTitle(R.string.about_program);
-        // MenuItem menuItem=menu.findItem(R.id.action_settings);
-        // menuItem.setTitle(R.string.about_program);
     }
 
     @TargetApi(11)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState){
         View vv = inflater.inflate(R.layout.fragment_news, parent, false);
-/*
-       if(mNews.getTitle()!=null){
-           ((AppCompatActivity)getActivity()).setTitle(mNews.getTitle());
-        }
-
-/*
-        if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.HONEYCOMB){
-           if(NavUtils.getParentActivityName(getActivity())!=null) {
-             //  getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
-            //   ((AppCompatActivity)getActivity()).getActionBar().setDisplayHomeAsUpEnabled(true);
-           }
-        }*/
-     //   ((AppCompatActivity)getActivity()).setTitle("Бульдожка");
 
         ImageView imageView1=(ImageView)vv.findViewById(R.id.news_pick);
         String newsPickUrl=mNews.getUrlPick();
 
        try{
 
-            Picasso.with(getContext()) //передаем контекст приложения
-                    .load(newsPickUrl) //адрес изображения
-                    .into(imageView1); //ссылка на ImageView
+            Picasso.with(getContext()) //transfer of the application context.
+                    .load(newsPickUrl) //source of image
+                    .into(imageView1); //link to ImageView
         }catch(Exception e){
            imageView1.setImageResource(R.drawable.news_background);
        }
@@ -183,7 +126,6 @@ public  class NewsFragment extends Fragment{
     @Override
     public void onPause(){
         super.onPause();
-        //NewsBox.get(getActivity()).saveNews();
-    }
+        }
 
 }

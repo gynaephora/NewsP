@@ -9,7 +9,7 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 
 /**
- * Created by mustango on 08.06.2016.
+ * Created by Volodymyr Korzhovsky on 08.06.2016.
  */
 public class PubDate implements jsoupParse {
 
@@ -25,7 +25,6 @@ public class PubDate implements jsoupParse {
         if (doc != null) {
             try {
                 Elements newsBox = doc.select("div.print_container");
-               // String pubDateString = "null";
                 //get publication date of news
                 try {
                     Element pubDateElement = newsBox.select("span").first();

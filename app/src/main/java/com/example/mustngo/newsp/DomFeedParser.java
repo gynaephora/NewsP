@@ -13,7 +13,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 /**
- * Created by yu-sat on 29.01.2016.
+ * Created by Volodymyr Korzhovsky on 29.01.2016.
  */
 public class DomFeedParser extends BaseFeedParser {
 
@@ -41,11 +41,7 @@ public class DomFeedParser extends BaseFeedParser {
                 String nm="null";
                 PubDate pubDateParse=new PubDate();
                 Newsmaker newsmakerParse = new Newsmaker();
-         /*       PubDate pubDateParse=new PubDate();
-                Newsmaker newsmakerParse = new Newsmaker();
-                FullText fullTextParse = new FullText();
-                Author AuthorParse = new Author();
-                UrlNewsPick UrlNewsPickParse = new UrlNewsPick();*/
+
 
                 for (int j=0;j<properties.getLength();j++){
                     Node property = properties.item(j);
@@ -86,20 +82,11 @@ public class DomFeedParser extends BaseFeedParser {
                             text.append(chars.item(k).getNodeValue());
                         }
                         message.setDescription(text.toString());
-                    } /*else if (name.equalsIgnoreCase(PUB_DATE)){
-                        message.setDate(property.getFirstChild().getNodeValue());
-                    }*/
+                    }
                 }
                    if(pd!="null" && nm!="null") {
                        messages.add(message);
-                    //   if(nm!="Reuters" & nm!="Украинская Фото Группа" & nm!="УНІАН" & nm!="Українські новини" & nm!="Интерфакс-Украина" & nm!="Интерфакс") {
-                     /*  if(nm!="Интерфакс-Украина") {
-                           messages.add(message);
-                       }*/
-                    /*   NewsBox.get(getContext()).saveNews();
-                        NewsBox.get(getActivity()).addNews(message);
-                    */}
-
+                  }
 
             }
         } catch (Exception e) {
@@ -107,91 +94,5 @@ public class DomFeedParser extends BaseFeedParser {
         }
         return messages;
     }
-
-
-/*
-    public void jsoupParse(String mUrl){
-        String author;
-        org.jsoup.nodes.Document doc=null;
-        String url_pick="null";
-      try{
-            doc= Jsoup.connect(mUrl).get();
-          try {
-              Element newsUrl = doc.select("img[src$=.jpg]").get(0);
-              url_pick = "http://podrobnosti.ua/" + newsUrl.attr("src");
-          }catch(Exception e){
-              url_pick="null";
-          }
-        }catch (IOException e){
-            e.printStackTrace();
-        }
-
-        if(doc!=null) {
-         try{
-                 Elements newsBox=doc.select("div.print_container");
-                 //Elements newsPickUrlBox=doc.select("meta[itemprop=image]");
-                 Elements newsPickUrlBox=doc.select("meta[itemprop=image");
-                 String newsPickUrl="null";
-                 String pubDateString="null";
-                 String NewsmakerString="null";
-                 String AuthorString="null";
-
-                 String textOfNews="null";
-
-             //get news url
-
-             //get news pick url
-
-             try{
-                 newsPickUrl=newsPickUrlBox.attr("content");
-             }catch(Exception e){
-                 newsPickUrl="null";
-             }
-             //get publication date of news
-             try{
-                 Element pubDateElement=newsBox.select("span").first();
-                 pubDateString=pubDateElement.text();
-             }catch(Exception e){
-                 pubDateString="null";
-             }
-             //get news maker
-             try {
-                 Element NewsmakerElement = newsBox.select("span.author").get(0).select("a").first();
-                 NewsmakerString = NewsmakerElement.text();
-             }catch (Exception e){
-                 NewsmakerString="null";
-             }
-
-            //get news author
-            try {
-                Element AuthorElement = newsBox.select("span.author").get(1).select("a").first();
-                AuthorString=AuthorElement.text();
-            }catch(Exception e){
-                AuthorString="null";
-                }
-            //get news text
-            try {
-                textOfNews = newsBox.select("p").text();
-            }catch(Exception e){
-                textOfNews="null";
-            }
-            //show all news information in logs form
-           // Log.i("Pick_Url", newsPickUrlBox.toString());
-            Log.i("Pick_Url_short", newsPickUrl);
-            Log.i("Pub_date", pubDateString);
-            Log.i("Newsmaker", NewsmakerString);
-            Log.i("Author", AuthorString);
-            Log.i("Url_of_news_picture", url_pick);
-            Log.i("Text_of_news", textOfNews);
-
-            }catch (Exception e){
-                Log.i("Author", "null");
-
-            }
-        }
-        else {author="Error";
-            Log.i("Author", author);}
-
-    }*/
 
 }

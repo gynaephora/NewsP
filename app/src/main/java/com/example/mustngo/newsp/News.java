@@ -6,7 +6,7 @@ import org.json.JSONObject;
 import java.util.UUID;
 
 /**
- * Created by yu-sat on 16.01.2016.
+ * Created by Volodymyr Korzhovsky on 16.01.2016.
  */
 
 public class News {
@@ -56,7 +56,7 @@ public class News {
    }
 
     public News() {
-        //генерирование уникального идентификатора
+        //generating a unique identifier
         mId = UUID.randomUUID();
     }
 

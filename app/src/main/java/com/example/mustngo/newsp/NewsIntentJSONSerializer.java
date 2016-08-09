@@ -17,7 +17,7 @@ import java.io.Writer;
 import java.util.ArrayList;
 
 /**
- * Created by kalmaro on 13.06.2016.
+ * Created by Volodymyr Korzhovsky on 13.06.2016.
  */
 public class NewsIntentJSONSerializer {
     private Context mContext;
