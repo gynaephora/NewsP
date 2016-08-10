@@ -14,7 +14,7 @@
     </style>
 
     <style name="myStyleDrawer">
-        <item name="android:textSize">10sp</item> <!-- menu item text size-->
+        <item name="android:textSize">30sp</item> <!-- menu item text size-->
 
     </style>
 </resources>
