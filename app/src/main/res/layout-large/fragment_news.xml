@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_width="match_parent"
+<LinearLayout
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android">
@@ -21,24 +22,26 @@
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:paddingBottom="5dp"
+        android:textSize="20sp"
         android:textColor="#234567"
         android:id="@+id/pub_date" />
 
     <ImageView
         android:layout_marginTop="0dp"
-        android:layout_width="wrap_content"
-        android:scaleType="centerCrop"
-        android:layout_height="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_height="246dp"
         android:id="@+id/news_pick"
+        android:scaleType="centerCrop"
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:paddingBottom="5dp"
+        android:paddingTop="25dp"
         android:textColor="#234567"
         android:id="@+id/news_title" />
 
@@ -47,8 +50,9 @@
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:paddingBottom="5dp"
-        android:textSize="15sp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:textSize="20sp"
         android:textColor="#151854"
         android:id="@+id/full_text" />
 
@@ -59,7 +63,7 @@
         android:paddingRight="10dp"
         android:paddingBottom="5dp"
         android:textColor="#234567"
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:id="@+id/author" />
 
     <TextView
@@ -68,7 +72,7 @@
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:paddingBottom="5dp"
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:textColor="#234567"
         android:text="Автор"
         android:id="@+id/newsmaker" />
@@ -80,7 +84,10 @@
         android:paddingRight="10dp"
         android:paddingBottom="5dp"
         android:textColor="#234567"
-        android:id="@+id/news_link" />
+        android:id="@+id/news_link"
+        android:linksClickable="true"
+        android:textColorLink="#1767b7"
+        android:autoLink="web"/>
 
 </LinearLayout>
 </ScrollView>
