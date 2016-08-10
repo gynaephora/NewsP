@@ -48,6 +48,9 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.net.URI;
 import java.util.ArrayList;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Volodymyr Korzhovsky on 19.01.2016.
@@ -61,6 +64,9 @@ public class NewsListFragment extends ListFragment {
     private String[] mNewsTheme;
     private String[] mNewsItem;
     private Menu refreshItem;
+    //flag, false -when internet connection true; true - when it happend off internet
+    private Boolean intNoYes=false;
+
 
     final String LOG_TAG = "myLogs";
     final String FILENAME = "file";
@@ -132,15 +138,24 @@ public class NewsListFragment extends ListFragment {
         if (mNews != null
                 && podrobnostiItemTask.getStatus() != PodrobnostiItemTask.Status.FINISHED) {
             podrobnostiItemTask.cancel(true);
-        }else
-            // execute(String[]) you can put array of links to web pages, or array of Integer[]
-            // if first param is Integer[] etc.
+        }else{
+            //if internet is reconnection, then recreate activity view
+            if(intNoYes!=false){
+                getActivity().recreate();
+            }
+           // execute(String[]) you can put array of links to web pages, or array of Integer[]
+           // if first param is Integer[] etc.
+          //  podrobnostiItemTask.cancel(true);
             podrobnostiItemTask = (PodrobnostiItemTask) new PodrobnostiItemTask()
-                    .execute(n);
+            .execute(n);
+
+        }
         } else {
             Toast toast = Toast.makeText(getContext(),
                     "Отсутствует интернет подключение", Toast.LENGTH_LONG);
             toast.show();
+            //dissconnect internet
+            intNoYes=true;
         }
     }
 
