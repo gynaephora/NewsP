@@ -258,21 +258,27 @@ public class NewsListFragment extends ListFragment {
         @Override
         protected ArrayList<News> doInBackground(String...string){
                String n=string[0];
-               return new DomFeedParser(n).parse();
+                try{
+                   return new DomFeedParser(n).parse();
+                }catch(Throwable t){
+                   return null;
+                  }
         }
         @Override
         protected void onPostExecute(ArrayList<News> items){
+          if(items==null){
+              getActivity().recreate();
+          }else {
+              NewsBox.get(getContext()).getNews();
+              NewsBox.get(getContext()).addNewsBox(items);
+              NewsBox.get(getContext()).saveNews();
 
-             NewsBox.get(getContext()).getNews();
-             NewsBox.get(getContext()).addNewsBox(items);
-             NewsBox.get(getContext()).saveNews();
+              NewsAdapter adapter = new NewsAdapter(items);
+              setListAdapter(adapter);
 
-             NewsAdapter adapter=new NewsAdapter(items);
-             setListAdapter(adapter);
-
-             Animation(true);
-             IfNewsRefreshDone=true;
-
+              Animation(true);
+              IfNewsRefreshDone = true;
+          }
         }
     }
 }
