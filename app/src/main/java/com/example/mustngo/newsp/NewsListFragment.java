@@ -65,7 +65,7 @@ public class NewsListFragment extends ListFragment {
     private String[] mNewsItem;
     private Menu refreshItem;
     //flag, false -when internet connection true; true - when it happend off internet
-    private Boolean intNoYes=false;
+    private Boolean intNoYes=true;
 
 
     final String LOG_TAG = "myLogs";
